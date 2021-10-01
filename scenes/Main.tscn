@@ -31,7 +31,7 @@ scale = Vector2( 4, 4 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1, 1, 0, 65536, 1, 0 )
+tile_data = PoolIntArray( -458747, 4, 0, -262147, 4, 0, -327661, 4, 0, -196618, 4, 0, -262130, 4, 0, -196591, 4, 0, -131063, 4, 0, -65523, 4, 0, -65518, 4, 0, 1, 1, 0, 65536, 1, 0, 393210, 4, 0, 393232, 4, 0, 786437, 4, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
