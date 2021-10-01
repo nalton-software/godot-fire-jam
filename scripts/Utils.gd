@@ -1,3 +1,5 @@
+extends Node
+
 static func converge_value(value, target, increment):
 	var difference = target - value
 	if abs(difference) < abs(increment):

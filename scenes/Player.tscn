@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/player_side-sheet.png" type="Texture" id=2]
 [ext_resource path="res://art/player_up-sheet.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 21.9424
 height = 35.1147
 
@@ -26,37 +26,38 @@ region = Rect2( 48, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 24 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "walk_down",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "walk_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 3 ), null ],
 "loop": true,
 "name": "walk_side",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down",
 "speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
+acceleration = 5000.0
+friction = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3.29426, 3.29426 )
-frames = SubResource( 2 )
+frames = SubResource( 9 )
 animation = "walk_side"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
