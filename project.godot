@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Godot Fire Jam"
-config/icon="res://icon.svg"
+config/icon="res://art/icon.svg"
 
 [physics]
 
