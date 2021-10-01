@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "ItemData",
+"language": "GDScript",
+"path": "res://scripts/items/ItemData.gd"
+} ]
+_global_script_class_icons={
+"ItemData": ""
+}
+
 [application]
 
 config/name="Godot Fire Jam"

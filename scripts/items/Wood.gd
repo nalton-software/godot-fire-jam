@@ -1,4 +1,6 @@
-extends 'res://resources/items/Item.gd'
+extends 'res://scripts/items/ItemData.gd'
 
-func _init():
-	._init('Wood')
+func _init().('Wood', preload('res://art/godot.png')):
+	pass
+
+

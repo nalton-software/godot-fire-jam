@@ -1,12 +1,28 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/player_side-sheet.png" type="Texture" id=2]
 [ext_resource path="res://art/player_up-sheet.png" type="Texture" id=3]
+[ext_resource path="res://art/player_down-sheet.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 21.9424
-height = 35.1147
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 15.9101, 27.8002 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
@@ -24,35 +40,38 @@ region = Rect2( 32, 0, 16, 24 )
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 24 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "walk_up",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ SubResource( 3 ), null ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "walk_side",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "walk_down",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-acceleration = 5000.0
-friction = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+position = Vector2( 0, 10.6787 )
+shape = SubResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3.29426, 3.29426 )
@@ -61,3 +80,7 @@ animation = "walk_side"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
