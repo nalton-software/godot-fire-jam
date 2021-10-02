@@ -26,15 +26,19 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func switch_animation():
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.playing = true
 	if velocity == Vector2.ZERO:
 		$AnimatedSprite.playing = false
 	elif abs(velocity.x) >= abs(velocity.y):
 		$AnimatedSprite.animation = 'walk_side'
-		$AnimatedSprite.flip_h = velocity.x < 0
+		if velocity.x > 0:
+			$AnimatedSprite.flip_h = false
+		elif velocity.x < 0:
+			$AnimatedSprite.flip_h = true
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = 'walk_down'
+		$AnimatedSprite.flip_h = false
 	elif velocity.y < 0:
 		$AnimatedSprite.animation = 'walk_up'
+		$AnimatedSprite.flip_h = false
 	$AnimatedSprite.speed_scale = velocity.length() / max_speed
