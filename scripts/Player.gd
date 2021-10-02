@@ -4,6 +4,8 @@ export var max_speed := 350
 export var acceleration := 1500
 export var friction := 2000
 
+onready var HUD = owner.get_node("HUD")
+
 var velocity = Vector2.ZERO
 
 func _ready():
@@ -45,3 +47,4 @@ func switch_animation():
 
 func collect(item: ItemData):
 	print('Collecting %s' % item.name)
+	HUD.add_item(item)
