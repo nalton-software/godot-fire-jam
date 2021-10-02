@@ -1,5 +1,3 @@
-tool
-
 extends Area2D
 
 export (Script) var item_script

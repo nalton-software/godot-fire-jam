@@ -24,7 +24,7 @@ func _physics_process(delta):
 	velocity = velocity.clamped(max_speed)
 	switch_animation()
 	velocity = move_and_slide(velocity)
-
+	
 func switch_animation():
 	$AnimatedSprite.playing = true
 	if velocity == Vector2.ZERO:

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Object.gd" type="Script" id=2]
+
+[node name="Object" type="StaticBody2D"]
+scale = Vector2( 4, 4 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0.0441952, 1.45841 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
