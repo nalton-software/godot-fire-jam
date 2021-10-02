@@ -9,6 +9,7 @@ extents = Vector2( 8.07618, 14.3802 )
 
 [node name="Object" instance=ExtResource( 2 )]
 item_prefab = ExtResource( 3 )
+spawn_offset = Vector2( 0, 50 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
@@ -17,4 +18,5 @@ texture = ExtResource( 1 )
 polygon = PoolVector2Array( 6.91068, 15.9024, 1.90503, 10.3545, -2.85034, 10.5213, -6.98, 15.9858 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 0.0441914, 1.6159 )
 shape = SubResource( 1 )
