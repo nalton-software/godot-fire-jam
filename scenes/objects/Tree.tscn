@@ -15,7 +15,7 @@ item_script = ExtResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PoolVector2Array( 6.91068, 15.9024, 1.90503, 10.3545, -2.85034, 10.5213, -6.98, 15.9858 )
+polygon = PoolVector2Array( 6.91068, 15.9024, 1.72678, 8.75617, -2.73779, 8.75617, -6.98, 15.9858 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( 0.0441914, 1.6159 )

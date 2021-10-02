@@ -3,8 +3,6 @@
 [ext_resource path="res://scripts/items/InventoryItem.gd" type="Script" id=1]
 
 [node name="InventoryItem" type="TextureRect"]
-margin_right = 32.0
-margin_bottom = 32.0
 stretch_mode = 6
 script = ExtResource( 1 )
 __meta__ = {

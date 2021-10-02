@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var max_speed := 350
 export var acceleration := 1500
 export var friction := 2000
+export var shift_multiplier := 1.5
 
 onready var HUD = owner.get_node("HUD")
 
@@ -22,10 +23,18 @@ func _physics_process(delta):
 		velocity.x = Utils.converge_value(velocity.x, 0, friction * delta)
 	if direction.y == 0:
 		velocity.y = Utils.converge_value(velocity.y, 0, friction * delta)
-	velocity += direction * acceleration * delta
-	velocity = velocity.clamped(max_speed)
+	
+	velocity += direction * get_real_shift(acceleration) * delta
+	velocity = velocity.clamped(get_real_shift(max_speed))
+	
 	switch_animation()
 	velocity = move_and_slide(velocity)
+
+func get_real_shift(value: float):
+	if Input.is_action_pressed("ui_shift"):
+		return value * shift_multiplier
+	else:
+		return value
 	
 func switch_animation():
 	$AnimatedSprite.playing = true
