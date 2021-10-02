@@ -3,7 +3,7 @@
 [ext_resource path="res://art/tileset.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 16, 32, 0, 32, 0, 16, 16, 16 )
+points = PoolVector2Array( 4, 24, 12, 24, 14, 30, 12, 32, 4, 32, 2, 30, 2, 30 )
 
 [resource]
 4/name = "Tree"

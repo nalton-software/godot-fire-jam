@@ -42,3 +42,6 @@ func switch_animation():
 		$AnimatedSprite.animation = 'walk_up'
 		$AnimatedSprite.flip_h = false
 	$AnimatedSprite.speed_scale = velocity.length() / max_speed
+
+func collect(item: ItemData):
+	print('Collecting %s' % item.name)
