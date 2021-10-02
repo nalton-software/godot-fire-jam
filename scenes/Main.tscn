@@ -7,6 +7,8 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
 [node name="Water" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
 tile_set = ExtResource( 1 )
@@ -31,8 +33,6 @@ tile_data = PoolIntArray( -1310749, 2, 1, -1310748, 2, 1, -1310747, 2, 1, -13107
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 349.086, 110.001 )
-
-[node name="HUD" parent="YSort" instance=ExtResource( 2 )]
 
 [node name="Objects" type="TileMap" parent="YSort"]
 scale = Vector2( 4, 4 )

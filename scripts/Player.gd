@@ -15,13 +15,13 @@ func _physics_process(delta):
 	direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	direction = direction.normalized()
 	
-	if direction == Vector2.ZERO:
-		# friction
+	# Friction
+	if direction.x == 0:
 		velocity.x = Utils.converge_value(velocity.x, 0, friction * delta)
+	if direction.y == 0:
 		velocity.y = Utils.converge_value(velocity.y, 0, friction * delta)
-	else:
-		velocity += direction * acceleration * delta
-		velocity = velocity.clamped(max_speed)
+	velocity += direction * acceleration * delta
+	velocity = velocity.clamped(max_speed)
 	switch_animation()
 	velocity = move_and_slide(velocity)
 
