@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 			
 		position = Utils.shake_once(original_pos,  mining_progress / toughness * 5.0)
 	
-
 func _on_Area2D_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		mining = event.pressed

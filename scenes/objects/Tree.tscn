@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.07618, 14.3802 )
 
-[node name="Object" instance=ExtResource( 2 )]
+[node name="Tree" instance=ExtResource( 2 )]
 item_prefab = ExtResource( 3 )
 spawn_offset = Vector2( 0, 50 )
 
