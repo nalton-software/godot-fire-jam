@@ -7,5 +7,5 @@ func _on_CloseButton_pressed():
 	hide()
 
 func populate_recipes():
-	for recipe in RecipeList.data:
+	for recipe in Recipes.data:
 		print(recipe.name)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://scenes/InventoryItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/CraftingMenu.tscn" type="PackedScene" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -73,3 +75,22 @@ margin_bottom = 16.0
 margin_left = 180.0
 margin_right = 196.0
 margin_bottom = 16.0
+
+[node name="CraftingMenuButton" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -162.976
+margin_top = -55.4882
+margin_right = -20.9763
+margin_bottom = -10.4882
+custom_fonts/font = ExtResource( 3 )
+text = "Crafting"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftingMenu" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Control/CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]

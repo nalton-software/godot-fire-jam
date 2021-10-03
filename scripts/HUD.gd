@@ -9,3 +9,6 @@ func add_item(item_data: Item) -> bool:
 	
 	available_spots[0].set_item(item_data)
 	return true
+
+func _on_CraftingMenuButton_pressed():
+	$CraftingMenu.popup()
