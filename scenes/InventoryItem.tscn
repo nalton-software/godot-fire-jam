@@ -23,6 +23,5 @@ margin_top = -6.0
 margin_right = 10.0
 margin_bottom = 10.0
 rect_scale = Vector2( 0.75, 0.75 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[connection signal="gui_input" from="Item" to="." method="_on_Item_gui_input"]
