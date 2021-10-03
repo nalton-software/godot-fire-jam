@@ -64,3 +64,7 @@ position = Vector2( 240, 346.408 )
 
 [node name="Stone2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 308, -393.54 )
+
+[node name="WorldItem6" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 351.063, -138.823 )
+item_name = "String"
