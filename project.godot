@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/items/ItemData.gd"
 }, {
-"base": "Node",
+"base": "Resource",
 "class": "Recipe",
 "language": "GDScript",
 "path": "res://scripts/Recipe.gd"

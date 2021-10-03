@@ -1,12 +1,14 @@
-extends Node
+extends Resource
 
 class_name Recipe
 
-# These two are in form { quantity : item_name }
+var name := ''
+# These two are in form { item_name : quantity }
 var ingredients := {}
 var outputs := {}
 
-func _init(p_ingredients, p_outputs):
+func _init(p_name, p_ingredients, p_outputs):
+	name = p_name
 	ingredients = p_ingredients
 	outputs = p_outputs
 
