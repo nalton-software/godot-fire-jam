@@ -12,7 +12,7 @@ func _enter_tree():
 	elif item != null:
 		item_name = item.name
 	else:
-		print('Error: WorldItem has no item assigned')
+		printerr('Error: WorldItem has no item assigned')
 	$Sprite.texture = item.texture
 	$Sprite.scale.x = item.size.x / item.texture.get_width()
 	$Sprite.scale.y = item.size.y / item.texture.get_height()
@@ -22,3 +22,4 @@ func _on_DisplayItem_body_entered(body):
 	if body.is_in_group('Players'):
 		if HUD.add_item(item):
 			queue_free()
+

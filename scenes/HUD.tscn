@@ -8,75 +8,7 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="Control" type="Control" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -100.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InventoryItems" type="HBoxContainer" parent="Control"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -64.0
-margin_right = -767.0
-margin_bottom = -64.0
-rect_scale = Vector2( 4, 4 )
-custom_constants/separation = -1
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InventoryItem" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 60.0
-margin_right = 76.0
-margin_bottom = 16.0
-
-[node name="InventoryItem2" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 75.0
-margin_right = 91.0
-margin_bottom = 16.0
-
-[node name="InventoryItem3" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 90.0
-margin_right = 106.0
-margin_bottom = 16.0
-
-[node name="InventoryItem4" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 105.0
-margin_right = 121.0
-margin_bottom = 16.0
-
-[node name="InventoryItem5" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 120.0
-margin_right = 136.0
-margin_bottom = 16.0
-
-[node name="InventoryItem6" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 135.0
-margin_right = 151.0
-margin_bottom = 16.0
-
-[node name="InventoryItem7" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 150.0
-margin_right = 166.0
-margin_bottom = 16.0
-
-[node name="InventoryItem8" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 165.0
-margin_right = 181.0
-margin_bottom = 16.0
-
-[node name="InventoryItem9" parent="Control/InventoryItems" instance=ExtResource( 2 )]
-margin_left = 180.0
-margin_right = 196.0
-margin_bottom = 16.0
-
-[node name="CraftingMenuButton" type="Button" parent="Control"]
+[node name="CraftingMenuButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -92,6 +24,72 @@ __meta__ = {
 }
 
 [node name="CraftingMenu" parent="." instance=ExtResource( 4 )]
-visible = false
 
-[connection signal="pressed" from="Control/CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]
+[node name="InventoryItems" type="HBoxContainer" parent="."]
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.25
+anchor_bottom = 1.0
+margin_top = -64.0
+margin_bottom = -64.0
+rect_scale = Vector2( 4, 4 )
+custom_constants/separation = -1
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryItem" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem2" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 15.0
+margin_right = 31.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem3" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 30.0
+margin_right = 46.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem4" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 45.0
+margin_right = 61.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem5" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem6" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 75.0
+margin_right = 91.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem7" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 90.0
+margin_right = 106.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem8" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 105.0
+margin_right = 121.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="InventoryItem9" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 120.0
+margin_right = 136.0
+margin_bottom = 16.0
+rect_scale = Vector2( 1, 1 )
+
+[connection signal="pressed" from="CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]
