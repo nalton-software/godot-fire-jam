@@ -16,7 +16,7 @@ func _enter_tree():
 	$Sprite.scale.y = item.size.y / item.texture.get_height()
 	$CollisionShape2D.shape.extents = item.size / 2
 
-func _on_DisplayItem_body_entered(body):
+func _on_WorldItem_body_entered(body):
 	if body.is_in_group('Players'):
 		var item_taken = body.collect(item)
 		if item_taken:

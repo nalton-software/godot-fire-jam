@@ -3,6 +3,6 @@ extends Node
 const Recipe = preload('res://scripts/recipes/Recipe.gd')
 
 var data = {
-	'Less wood' : Recipe.new('Less wood', {'wood' : 2}, {'wood' : 1}),
-	'More wood' : Recipe.new('More wood', {'wood' : 2}, {'wood' : 3}),
+	'String' : Recipe.new('String', {'CottonFluff' : 3}, {'String' : 1}),
+	'Half as much wood' : Recipe.new('Half as much wood', {'Wood' : 2}, {'Wood' : 1})
 }

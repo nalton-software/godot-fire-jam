@@ -1,7 +1,7 @@
 extends Node
 
 var items = []
-export (int) var max_items = 20
+export (int) var max_items = 9
 
 func _init():
 	pass
@@ -12,7 +12,6 @@ func add_item(item: Resource):
 		var hud = get_hud()
 		if hud != null:
 			hud.add_item(item)
-	print(len(items))
 	
 func remove_item(item: Resource):
 	if item in items:
@@ -20,7 +19,6 @@ func remove_item(item: Resource):
 		var hud = get_hud()
 		if hud != null:
 			hud.remove_item(item)
-	print(len(items))
 		
 func is_full():
 	return len(items) >= max_items

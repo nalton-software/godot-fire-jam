@@ -21,7 +21,7 @@ func can_be_made(available_items):
 		else:
 			available_items_dict[item.name] = 1
 	var can_be_made = true
-	for item_name in available_items_dict:
+	for item_name in ingredients:
 		if not (item_name in available_items_dict):
 			can_be_made = false
 			break

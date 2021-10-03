@@ -35,7 +35,7 @@ func _on_Item_gui_input(event: InputEvent) -> void:
 			
 			var world_item = world_item_prefab.instance()
 			world_item.item = item
-			var object_container = get_tree().current_scene
+			var object_container = get_tree().current_scene.get_node('YSort')
 			world_item.position = object_container.get_global_mouse_position()
 			object_container.add_child(world_item)
 			Inventory.remove_item(item)

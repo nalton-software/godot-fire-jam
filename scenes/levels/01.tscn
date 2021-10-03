@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/items/WorldItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/tilemaps/Water.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/Tree.tscn" type="PackedScene" id=4]
@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/objects/CottonPlant.tscn" type="PackedScene" id=9]
 
 [node name="01" type="Node2D"]
+script = ExtResource( 1 )
+objects_to_spawn = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ) ]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -24,51 +26,3 @@ tile_data = PoolIntArray( -1441831, 5, 1, -1441830, 5, 1, -1441829, 5, 1, -14418
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 8 )]
-
-[node name="Object" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 88.9377, 61.3729 )
-
-[node name="Object2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -443.621, 196.351 )
-
-[node name="Object3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -112.246, -51.6333 )
-
-[node name="WorldItem" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 328.371, 117.466 )
-item_name = "Wood"
-
-[node name="WorldItem2" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 202.896, -101.448 )
-item_name = "Wood"
-
-[node name="WorldItem3" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -154.841, -197.556 )
-item_name = "Wood"
-
-[node name="WorldItem4" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 32.0363, -224.253 )
-item_name = "Wood"
-
-[node name="WorldItem5" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -229.593, 85.4297 )
-item_name = "Wood"
-
-[node name="Stone" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 536, -224.253 )
-
-[node name="Stone3" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 716, 132.351 )
-
-[node name="Stone4" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 240, 346.408 )
-
-[node name="Stone2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 308, -393.54 )
-
-[node name="WorldItem6" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 351.063, -138.823 )
-item_name = "String"
-
-[node name="Tree" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( -315.254, -100.995 )
