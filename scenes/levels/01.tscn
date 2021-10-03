@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/items/WorldItem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/objects/Stone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/tilemaps/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/objects/CottonPlant.tscn" type="PackedScene" id=9]
 
 [node name="01" type="Node2D"]
 
@@ -68,3 +69,6 @@ position = Vector2( 308, -393.54 )
 [node name="WorldItem6" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 351.063, -138.823 )
 item_name = "String"
+
+[node name="Tree" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -315.254, -100.995 )

@@ -38,6 +38,12 @@ Items="*res://scripts/items/Items.gd"
 RecipeList="*res://scripts/RecipeList.gd"
 LevelMangement="*res://scripts/LevelMangement.gd"
 
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+
 [input]
 
 ui_left={
