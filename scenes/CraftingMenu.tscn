@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://art/cross.svg" type="Texture" id=2]
 [ext_resource path="res://scripts/CraftingMenu.gd" type="Script" id=3]
+[ext_resource path="res://resources/smaller_font.tres" type="DynamicFont" id=4]
 
-[node name="CraftingMenu" type="PopupMenu"]
+[node name="CraftingMenu" type="PopupPanel"]
+pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -13,37 +16,29 @@ margin_right = -100.0
 margin_bottom = -50.0
 popup_exclusive = true
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CloseButton" type="Button" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -61.0
-margin_top = 7.0
-margin_right = -12.0
-margin_bottom = 50.0
-icon = ExtResource( 2 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/separation = 2
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 804.0
+margin_bottom = 480.0
+custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heading" type="Label" parent="VBoxContainer"]
-margin_left = 358.0
-margin_right = 466.0
-margin_bottom = 39.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 784.0
+margin_bottom = 43.0
+alignment = 1
+
+[node name="Heading" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 311.0
+margin_top = 2.0
+margin_right = 419.0
+margin_bottom = 41.0
 grow_horizontal = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 custom_fonts/font = ExtResource( 1 )
 text = "Crafting"
 align = 1
@@ -51,16 +46,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 41.0
-margin_right = 824.0
-margin_bottom = 41.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
-
-[node name="Recipes" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ScrollContainer"]
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 735.0
+margin_right = 784.0
+margin_bottom = 43.0
+size_flags_horizontal = 0
+icon = ExtResource( 2 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 53.0
+margin_right = 784.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+collapsed = true
+
+[node name="RecipeList" type="ItemList" parent="VBoxContainer/HSplitContainer"]
+margin_right = 386.0
+margin_bottom = 407.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 4 )
+custom_constants/line_separation = 5
+auto_height = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer"]
+margin_left = 398.0
+margin_right = 784.0
+margin_bottom = 407.0
+size_flags_horizontal = 3
+
+[node name="Heading" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_right = 386.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 1 )
+text = "<Item name>"
+
+[connection signal="about_to_show" from="." to="." method="_on_CraftingMenu_about_to_show"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="item_selected" from="VBoxContainer/HSplitContainer/RecipeList" to="." method="_on_RecipeList_item_selected"]
