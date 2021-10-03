@@ -1,9 +1,11 @@
 extends CanvasLayer
 
 onready var inventory = $"Control/InventoryItems"
-onready var inventory_item_prefab = preload("res://scenes/InventoryItem.tscn")
 
-func add_item(item_data: ItemData):
-	var inventory_item = inventory_item_prefab.instance()
-	inventory_item.item_data = item_data
-	inventory.add_child(inventory_item)
+func add_item(item_data: ItemData) -> bool:
+	var available_spots = get_tree().get_nodes_in_group("Empty")
+	if len(available_spots) == 0:
+		return false
+	
+	available_spots[0].set_item(item_data)
+	return true

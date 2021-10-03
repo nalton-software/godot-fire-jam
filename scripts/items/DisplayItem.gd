@@ -2,6 +2,8 @@ extends Area2D
 
 export var item_script: Script
 
+onready var HUD = $"/root/Main/HUD"
+
 var item_data
 
 func _enter_tree():
@@ -14,5 +16,5 @@ func _enter_tree():
 
 func _on_DisplayItem_body_entered(body):
 	if body.is_in_group('Players'):
-		body.collect(item_data)
-		queue_free()
+		if HUD.add_item(item_data):
+			queue_free()

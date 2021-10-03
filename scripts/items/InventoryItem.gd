@@ -1,11 +1,5 @@
 extends TextureRect
 
-export var item_script: Script
-
-var item_data
-
-func _enter_tree():
-	if item_data == null:
-		item_data = item_script.new()
-	
-	texture = item_data.texture
+func set_item(item_data: ItemData):
+	$Item.texture = item_data.texture
+	remove_from_group("Empty")

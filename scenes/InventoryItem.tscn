@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/items/InventoryItem.gd" type="Script" id=1]
+[ext_resource path="res://art/hotbar_tile.png" type="Texture" id=2]
 
-[node name="InventoryItem" type="TextureRect"]
+[node name="InventoryItem" type="TextureRect" groups=[
+"Empty",
+]]
+texture = ExtResource( 2 )
 stretch_mode = 6
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_scale = Vector2( 0.75, 0.75 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

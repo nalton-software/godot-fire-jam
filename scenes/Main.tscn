@@ -34,5 +34,37 @@ position = Vector2( -443.621, 196.351 )
 position = Vector2( -112.246, -51.6333 )
 
 [node name="DisplayItem" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 7, -151 )
+position = Vector2( -28.9188, -206.001 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem9" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 62.0007, -239.675 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem7" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 133.838, -144.265 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem8" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 133.838, -144.265 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -9.83698, -73.5501 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 91.1847, -181.306 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem4" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 86.6948, -75.795 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem5" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -200.655, -174.572 )
+item_script = ExtResource( 7 )
+
+[node name="DisplayItem6" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 251.697, -30.8965 )
 item_script = ExtResource( 7 )

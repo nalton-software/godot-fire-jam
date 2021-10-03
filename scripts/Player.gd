@@ -6,8 +6,6 @@ export var friction := 2000
 export var shift_multiplier := 1.5
 var direction = 'right'
 
-onready var HUD = owner.get_node("HUD")
-
 var velocity = Vector2.ZERO
 
 func _ready():
@@ -73,7 +71,3 @@ func check_direction():
 			direction = 'down'
 		elif velocity.y < 0:
 			direction = 'up'
-		
-func collect(item: ItemData):
-	print('Collecting %s' % item.name)
-	HUD.add_item(item)
