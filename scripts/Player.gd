@@ -14,18 +14,18 @@ func _ready():
 	$AnimatedSprite.playing = true
 
 func _physics_process(delta):
-	var direction := Vector2.ZERO
-	direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-	direction = direction.normalized()
+	var move_direction := Vector2.ZERO
+	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	move_direction = move_direction.normalized()
 	
 	# Friction
-	if direction.x == 0:
+	if move_direction.x == 0:
 		velocity.x = Utils.converge_value(velocity.x, 0, friction * delta)
-	if direction.y == 0:
+	if move_direction.y == 0:
 		velocity.y = Utils.converge_value(velocity.y, 0, friction * delta)
 	
-	velocity += direction * get_real_shift(acceleration) * delta
+	velocity += move_direction * get_real_shift(acceleration) * delta
 	velocity = velocity.clamped(get_real_shift(max_speed))
 	
 	check_direction()

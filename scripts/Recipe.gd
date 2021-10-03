@@ -1,16 +1,29 @@
 extends Node
 
+class_name Recipe
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# These two are in form { quantity : item_name }
+var ingredients := {}
+var outputs := {}
 
+func _init(p_ingredients, p_outputs):
+	ingredients = p_ingredients
+	outputs = p_outputs
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func can_be_made(available_items):
+	# Can this recipe be made with the items in the list of Items available_items?
+	var available_items_dict = {}
+	for item in available_items:
+		if item.name in available_items_dict:
+			available_items_dict[item.name] += 1
+		else:
+			available_items_dict[item.name] = 1
+	var can_be_made = true
+	for item_name in available_items_dict:
+		if not (item_name in available_items_dict):
+			can_be_made = false
+			break
+		if available_items_dict[item_name] < ingredients[item_name]:
+			can_be_made = false
+			break
+	return can_be_made
