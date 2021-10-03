@@ -12,21 +12,17 @@ var mouse_down := false
 var mining_progress := 0.0
 
 func _process(delta: float) -> void:
-	if mouse_down:
-		if mouse_on:
-			mining_progress += delta
-			if mining_progress > toughness:
-				destroy()
-		else:
-			mining_progress = max(0.0, mining_progress - delta * 1.5)
-			
-		position = Utils.shake_once(original_pos,  mining_progress / toughness * 5.0)
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		mouse_down = event.pressed
-		mining_progress = 0.0
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and mouse_on:
+		mining_progress += delta
+		if mining_progress > toughness:
+			destroy()
+	else:
+		mining_progress = max(0.0, mining_progress - delta * 1.5)
+	
+	if mining_progress == 0:
 		position = original_pos
+	else:
+		position = Utils.shake_once(original_pos,  mining_progress / toughness * 5.0)
 
 func _on_Area2D_mouse_entered() -> void:
 	mouse_on = true
