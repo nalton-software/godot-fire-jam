@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://art/cross.svg" type="Texture" id=2]
+[ext_resource path="res://scripts/CraftingMenu.gd" type="Script" id=3]
+
+[node name="CraftingMenu" type="PopupMenu"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 50.0
+margin_right = -100.0
+margin_bottom = -50.0
+popup_exclusive = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heading" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -54.0
+margin_top = 13.0
+margin_right = 54.0
+margin_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "Crafting"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -61.0
+margin_top = 7.0
+margin_right = -12.0
+margin_bottom = 50.0
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Recipes" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
