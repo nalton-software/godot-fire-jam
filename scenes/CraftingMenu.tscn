@@ -5,7 +5,6 @@
 [ext_resource path="res://scripts/CraftingMenu.gd" type="Script" id=3]
 
 [node name="CraftingMenu" type="PopupMenu"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -14,22 +13,6 @@ margin_right = -100.0
 margin_bottom = -50.0
 popup_exclusive = true
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Heading" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -54.0
-margin_top = 13.0
-margin_right = 54.0
-margin_bottom = 39.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 1 )
-text = "Crafting"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,8 +30,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Recipes" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heading" type="Label" parent="VBoxContainer"]
+margin_left = 358.0
+margin_right = 466.0
+margin_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "Crafting"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 41.0
+margin_right = 824.0
+margin_bottom = 41.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
+
+[node name="Recipes" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]

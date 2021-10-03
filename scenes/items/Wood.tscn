@@ -1,5 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/DisplayItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/items/WorldItem.tscn" type="PackedScene" id=1]
 
 [node name="Wood" instance=ExtResource( 1 )]
+item_name = "Wood"

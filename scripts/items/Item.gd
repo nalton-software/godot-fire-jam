@@ -1,6 +1,6 @@
 extends Resource
 
-class_name ItemData
+class_name Item
 
 export (String) var name
 export (StreamTexture) var texture

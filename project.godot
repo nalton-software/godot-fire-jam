@@ -10,12 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "ItemData",
+"class": "Item",
 "language": "GDScript",
-"path": "res://scripts/items/ItemData.gd"
+"path": "res://scripts/items/Item.gd"
+}, {
+"base": "Resource",
+"class": "Recipe",
+"language": "GDScript",
+"path": "res://scripts/recipes/Recipe.gd"
 } ]
 _global_script_class_icons={
-"ItemData": ""
+"Item": "",
+"Recipe": ""
 }
 
 [application]
@@ -27,7 +33,8 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Utils="*res://scripts/Utils.gd"
-RecipeList="*res://scripts/RecipeList.gd"
+Recipes="*res://scripts/recipes/Recipes.gd"
+Items="*res://scripts/items/Items.gd"
 
 [input]
 

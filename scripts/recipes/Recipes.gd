@@ -1,6 +1,6 @@
 extends Node
 
-const Recipe = preload('res://scripts/Recipe.gd')
+const Recipe = preload('res://scripts/recipes/Recipe.gd')
 
 var data = [
 	Recipe.new('Less wood', {'wood' : 2}, {'wood' : 1}),

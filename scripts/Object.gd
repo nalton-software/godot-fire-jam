@@ -2,14 +2,19 @@ extends StaticBody2D
 
 export var spawn_offset := Vector2.ZERO
 export var toughness := 1.0
-export var item_script: Script
+export var item_name: String
 
 onready var original_pos := position
-onready var item_prefab := preload("res://scenes/DisplayItem.tscn")
+onready var world_item_prefab := preload("res://scenes/items/WorldItem.tscn")
+
+var item: Resource
 
 var mouse_on := false
 var mouse_down := false
 var mining_progress := 0.0
+
+func _ready():
+	item = Items.data[item_name]
 
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and mouse_on:
@@ -31,8 +36,8 @@ func _on_Area2D_mouse_exited() -> void:
 	mouse_on = false
 
 func destroy():
-	var item = item_prefab.instance()
-	item.position = position + spawn_offset
-	item.item_script = item_script
-	get_parent().add_child(item)
+	var world_item = world_item_prefab.instance()
+	world_item.position = position + spawn_offset
+	world_item.item = item
+	get_parent().add_child(world_item)
 	queue_free()
