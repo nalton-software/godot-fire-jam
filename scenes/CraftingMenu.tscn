@@ -7,6 +7,7 @@
 
 [node name="CraftingMenu" type="PopupPanel"]
 pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -77,6 +78,7 @@ margin_left = 398.0
 margin_right = 784.0
 margin_bottom = 407.0
 size_flags_horizontal = 3
+custom_constants/separation = 10
 
 [node name="Heading" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
 margin_right = 386.0
@@ -84,6 +86,28 @@ margin_bottom = 39.0
 custom_fonts/font = ExtResource( 1 )
 text = "<Item name>"
 
+[node name="Ingredients" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 386.0
+margin_bottom = 79.0
+custom_fonts/font = ExtResource( 4 )
+text = "<ingredients>"
+
+[node name="Outputs" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_top = 89.0
+margin_right = 386.0
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 4 )
+text = "<outputs>"
+
+[node name="CraftButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_top = 129.0
+margin_right = 386.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 4 )
+text = "Craft"
+
 [connection signal="about_to_show" from="." to="." method="_on_CraftingMenu_about_to_show"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
 [connection signal="item_selected" from="VBoxContainer/HSplitContainer/RecipeList" to="." method="_on_RecipeList_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HSplitContainer/VBoxContainer/CraftButton" to="." method="_on_CraftButton_pressed"]
