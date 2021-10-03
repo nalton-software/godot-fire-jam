@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 export var max_speed := 350
 export var acceleration := 1500
 export var friction := 2000
@@ -71,3 +72,10 @@ func check_direction():
 			direction = 'down'
 		elif velocity.y < 0:
 			direction = 'up'
+
+func collect(item: Resource):
+	var added_item = false
+	if not Inventory.is_full():
+		Inventory.add_item(item)
+		added_item = true
+	return added_item
