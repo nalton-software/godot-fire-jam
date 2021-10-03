@@ -3,7 +3,7 @@
 [ext_resource path="res://resources/tileset.tres" type="TileSet" id=1]
 
 [node name="Dirt" type="TileMap"]
-scale = Vector2( 4, 4 )
+scale = Vector2( 3, 3 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
