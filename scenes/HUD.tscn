@@ -92,5 +92,6 @@ __meta__ = {
 }
 
 [node name="CraftingMenu" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [connection signal="pressed" from="Control/CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]
