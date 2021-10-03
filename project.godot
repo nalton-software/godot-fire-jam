@@ -33,7 +33,6 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Utils="*res://scripts/Utils.gd"
-RecipeList="*res://scripts/RecipeList.gd"
 Recipes="*res://scripts/recipes/Recipes.gd"
 Items="*res://scripts/items/Items.gd"
 
