@@ -16,6 +16,9 @@ func can_be_made(available_items):
 	# Can this recipe be made with the items in the list of Items available_items?
 	var available_items_dict = {}
 	for item in available_items:
+		if item == null:
+			continue
+		
 		if item.name in available_items_dict:
 			available_items_dict[item.name] += 1
 		else:

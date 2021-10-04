@@ -13,12 +13,12 @@ func add_item(item: Resource):
 		if hud != null:
 			hud.add_item(item)
 	
-func remove_item(item: Resource):
-	if item in items:
-		items.remove(items.find(item))
-		var hud = get_hud()
-		if hud != null:
-			hud.remove_item(item)
+func remove_item(index_or_item):
+	var index = index_or_item if typeof(index_or_item) == TYPE_INT else items.find(index_or_item)
+	items[index] = null
+	var hud = get_hud()
+	if hud != null:
+		hud.remove_item(index)
 		
 func is_full():
 	return len(items) >= max_items
