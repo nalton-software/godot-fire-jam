@@ -21,6 +21,7 @@ func set_item(p_item: Item):
 	
 func remove_item():
 	item_node.texture = null
+	item = null
 	add_to_group("Empty")
 	remove_from_group('Filled')
 
@@ -33,9 +34,10 @@ func _on_Item_gui_input(event: InputEvent) -> void:
 		else:
 			item_node.rect_position = original_pos
 			
-			var world_item = world_item_prefab.instance()
-			world_item.item = item
-			var object_container = get_tree().current_scene.get_node('YSort')
-			world_item.position = object_container.get_global_mouse_position()
-			object_container.add_child(world_item)
-			Inventory.remove_item(item)
+			if item != null:
+				var world_item = world_item_prefab.instance()
+				world_item.item = item
+				var object_container = get_tree().current_scene.get_node('YSort')
+				world_item.position = object_container.get_global_mouse_position()
+				object_container.add_child(world_item)
+				Inventory.remove_item(item)
