@@ -3,9 +3,7 @@
 [ext_resource path="res://scripts/items/InventoryItem.gd" type="Script" id=1]
 [ext_resource path="res://art/hotbar_tile.png" type="Texture" id=2]
 
-[node name="InventoryItem" type="TextureRect" groups=[
-"Empty",
-]]
+[node name="InventoryItem" type="TextureRect"]
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 stretch_mode = 6

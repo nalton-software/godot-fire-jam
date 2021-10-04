@@ -13,7 +13,7 @@ func add_item(item: Resource) -> bool:
 		items[empty_index] = item
 		var hud = get_hud()
 		if hud != null:
-			hud.add_item(item)
+			hud.add_item(item, empty_index)
 		return true
 		
 	return false

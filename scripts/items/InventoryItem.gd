@@ -16,14 +16,10 @@ func _process(delta: float) -> void:
 func set_item(p_item: Item):
 	item = p_item
 	item_node.texture = item.texture
-	remove_from_group("Empty")
-	add_to_group('Filled')
 	
 func remove_item():
 	item_node.texture = null
 	item = null
-	add_to_group("Empty")
-	remove_from_group('Filled')
 
 func _on_Item_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and item != null:
