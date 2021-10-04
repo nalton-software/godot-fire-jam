@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
-[ext_resource path="res://scenes/InventoryItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ItemSlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/CraftingMenu.tscn" type="PackedScene" id=4]
 
@@ -27,71 +27,91 @@ __meta__ = {
 
 [node name="CraftingMenu" parent="." instance=ExtResource( 4 )]
 
+[node name="DragItemHolder" type="Control" parent="." groups=[
+"DragItemHolder",
+]]
+anchor_right = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="InventoryItems" type="HBoxContainer" parent="."]
-anchor_left = 0.25
 anchor_top = 1.0
-anchor_right = 0.25
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -64.0
-margin_bottom = -64.0
-rect_scale = Vector2( 4, 4 )
-custom_constants/separation = -1
+margin_left = 200.0
+margin_top = -73.0
+margin_right = -194.0
+margin_bottom = 2.0
+grow_horizontal = 2
+size_flags_horizontal = 5
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InventoryItem" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
+[node name="ItemSlot" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_right = 66.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="InventoryItem2" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 15.0
-margin_right = 31.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem3" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 30.0
-margin_right = 46.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem4" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 45.0
-margin_right = 61.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem5" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 60.0
-margin_right = 76.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem6" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 75.0
-margin_right = 91.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem7" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 90.0
-margin_right = 106.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem8" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 105.0
-margin_right = 121.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="InventoryItem9" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 120.0
+[node name="ItemSlot2" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 70.0
 margin_right = 136.0
-margin_bottom = 16.0
-rect_scale = Vector2( 1, 1 )
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot3" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 140.0
+margin_right = 207.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot4" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 211.0
+margin_right = 277.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot5" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 281.0
+margin_right = 348.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot6" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 352.0
+margin_right = 418.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot7" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 422.0
+margin_right = 489.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot8" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 493.0
+margin_right = 559.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemSlot9" parent="InventoryItems" instance=ExtResource( 2 )]
+margin_left = 563.0
+margin_right = 630.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]

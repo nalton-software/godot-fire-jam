@@ -6,14 +6,18 @@ var crnt_recipe
 
 func _ready():
 	populate_recipes()
-
-func _on_CraftingMenu_about_to_show():
-	#get_tree().paused = true
-	pass
+	hide()
 
 func _on_CloseButton_pressed():
+	close()
+
+func close():
+	for item_slot in get_tree().get_nodes_in_group('ItemSlots'):
+		if is_a_parent_of(item_slot):
+			if item_slot.item != null:
+				Inventory.add_item(item_slot.item)
+				item_slot.remove_item()
 	hide()
-	#get_tree().paused = false
 
 func populate_recipes():
 	for recipe_name in Recipes.data:

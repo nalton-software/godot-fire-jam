@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/DraggableItem.gd" type="Script" id=1]
+[ext_resource path="res://scripts/items/DragItem.gd" type="Script" id=1]
 
 [node name="DraggableItem" type="TextureRect" groups=[
 "DraggableItems",
