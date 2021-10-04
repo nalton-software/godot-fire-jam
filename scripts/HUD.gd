@@ -11,4 +11,4 @@ func remove_item(index: int):
 	item_slots[index].remove_item()
 
 func _on_CraftingMenuButton_pressed():
-	$CraftingMenu.popup()
+	$CraftingMenu.show()

@@ -4,9 +4,10 @@
 [ext_resource path="res://art/hotbar_tile.png" type="Texture" id=2]
 
 [node name="InventoryItem" type="TextureRect"]
+margin_right = 82.0
+margin_bottom = 82.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
-stretch_mode = 6
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

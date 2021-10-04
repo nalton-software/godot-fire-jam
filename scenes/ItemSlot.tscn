@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/hotbar_tile.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureRect
+
+"
+
+[node name="ItemSlot" type="TextureRect" groups=[
+"ItemSlots",
+]]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+stretch_mode = 5
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

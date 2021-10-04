@@ -8,7 +8,7 @@ extents = Vector2( 6.96874, 8.05443 )
 
 [node name="CottonPlant" instance=ExtResource( 2 )]
 spawn_offset = Vector2( 0, 20 )
-item_name = "CottonFluff"
+item_name = "Cotton Fluff"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
