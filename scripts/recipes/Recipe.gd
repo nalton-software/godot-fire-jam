@@ -2,33 +2,29 @@ extends Resource
 
 class_name Recipe
 
+const grid_size = Vector2(3, 3)
+
 var name := ''
-# These two are in form { item_name : quantity }
-var ingredients := {}
-var outputs := {}
+# 3x3 list of items names, use null for nothing 
+var ingredients = []
+var ingredient_quantities = {} # filled at ready, dict of { item name : qty }
+ # list of item names
+var outputs = []
 
 func _init(p_name, p_ingredients, p_outputs):
 	name = p_name
 	ingredients = p_ingredients
 	outputs = p_outputs
 
-func can_be_made(available_items):
-	# Can this recipe be made with the items in the list of Items available_items?
-	var available_items_dict = {}
-	for item in available_items:
-		if item == null:
-			continue
-		
-		if item.name in available_items_dict:
-			available_items_dict[item.name] += 1
-		else:
-			available_items_dict[item.name] = 1
-	var can_be_made = true
 	for item_name in ingredients:
-		if not (item_name in available_items_dict):
-			can_be_made = false
-			break
-		if available_items_dict[item_name] < ingredients[item_name]:
-			can_be_made = false
-			break
-	return can_be_made
+		if item_name in ingredient_quantities:
+			ingredient_quantities[item_name] += 1
+		else:
+			ingredient_quantities[item_name] = 1
+
+func can_be_made(item_arrangement):
+	for row_idx in range(grid_size.y):
+		for col_idx in range(grid_size.x):
+			if ingredients[row_idx][col_idx] != item_arrangement[row_idx][col_idx]:
+				return false
+	return true
