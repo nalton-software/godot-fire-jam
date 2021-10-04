@@ -74,8 +74,4 @@ func check_direction():
 			direction = 'up'
 
 func collect(item: Resource):
-	var added_item = false
-	if not Inventory.is_full():
-		Inventory.add_item(item)
-		added_item = true
-	return added_item
+	return Inventory.add_item(item)
