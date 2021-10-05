@@ -19,6 +19,9 @@ func add_item(item: Item, index: int = -1):
 
 func remove_item(index: int):
 	item_slots[index].remove_item()
+	
+func set_target_item(item: Item):
+	$TargetItem/Name.text = 'Goal: %s' % item.name
 
 func _on_CraftingMenuButton_pressed():
 	$CraftingMenu.show()

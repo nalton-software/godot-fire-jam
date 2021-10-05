@@ -9,8 +9,8 @@ var data = {
 		[null, null, null]
 	], 'String'),
 	'Cart' : Recipe.new('Cart', [
-		['Wood', null, 'Wood'],
-		['Wood', 'Wood', 'Wood'],
+		['Plank', 'Plank', 'Plank'],
+		['Plank', 'Plank', 'Plank'],
 		['Stone', null, 'Stone']
 	], 'Cart'),
 	'Axe' : Recipe.new('Axe', [
