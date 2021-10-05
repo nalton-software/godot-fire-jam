@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
-[ext_resource path="res://scenes/ItemSlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/items/ItemSlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/CraftingMenu.tscn" type="PackedScene" id=4]
 
@@ -38,80 +38,79 @@ __meta__ = {
 }
 
 [node name="InventoryItems" type="HBoxContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 200.0
-margin_top = -73.0
-margin_right = -194.0
-margin_bottom = 2.0
+margin_left = -265.0
+margin_top = -60.0
+margin_right = 265.0
 grow_horizontal = 2
-size_flags_horizontal = 5
+size_flags_vertical = 8
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ItemSlot" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_right = 66.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 55.0
+margin_bottom = 60.0
+in_inventory = true
 
 [node name="ItemSlot2" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 70.0
-margin_right = 136.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 59.0
+margin_right = 114.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot3" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 140.0
-margin_right = 207.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 118.0
+margin_right = 173.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot4" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 211.0
-margin_right = 277.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 177.0
+margin_right = 233.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot5" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 281.0
-margin_right = 348.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 237.0
+margin_right = 292.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot6" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 352.0
-margin_right = 418.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 296.0
+margin_right = 351.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot7" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 422.0
-margin_right = 489.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 355.0
+margin_right = 411.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot8" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 493.0
-margin_right = 559.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 415.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [node name="ItemSlot9" parent="InventoryItems" instance=ExtResource( 2 )]
-margin_left = 563.0
-margin_right = 630.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 474.0
+margin_right = 530.0
+margin_bottom = 60.0
+size_flags_vertical = 1
+in_inventory = true
 
 [connection signal="pressed" from="CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]

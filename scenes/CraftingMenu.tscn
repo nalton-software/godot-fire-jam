@@ -4,7 +4,7 @@
 [ext_resource path="res://art/cross.svg" type="Texture" id=2]
 [ext_resource path="res://scripts/CraftingMenu.gd" type="Script" id=3]
 [ext_resource path="res://resources/smaller_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scenes/ItemSlot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/items/ItemSlot.tscn" type="PackedScene" id=5]
 
 [node name="CraftingMenu" type="Panel"]
 pause_mode = 2
@@ -64,99 +64,90 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 collapsed = true
 
-[node name="RecipeList" type="ItemList" parent="VBoxContainer/HSplitContainer"]
+[node name="RecipeHints" type="ScrollContainer" parent="VBoxContainer/HSplitContainer"]
 margin_right = 352.0
 margin_bottom = 389.0
 size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/RecipeHints"]
+margin_right = 171.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/RecipeHints/VBoxContainer"]
+margin_right = 171.0
+margin_bottom = 30.0
 custom_fonts/font = ExtResource( 4 )
-custom_constants/line_separation = 5
-auto_height = true
+text = "Recipe hints here"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer"]
-visible = false
-margin_left = 398.0
-margin_right = 784.0
-margin_bottom = 407.0
-size_flags_horizontal = 3
-custom_constants/separation = 10
-
-[node name="Heading" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
-margin_right = 386.0
-margin_bottom = 39.0
-custom_fonts/font = ExtResource( 1 )
-text = "<Item name>"
-
-[node name="Ingredients" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
-margin_top = 49.0
-margin_right = 386.0
-margin_bottom = 79.0
-custom_fonts/font = ExtResource( 4 )
-text = "<ingredients>"
-
-[node name="Outputs" type="Label" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
-margin_top = 89.0
-margin_right = 386.0
-margin_bottom = 119.0
-custom_fonts/font = ExtResource( 4 )
-text = "<outputs>"
-
-[node name="CraftButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
-margin_top = 129.0
-margin_right = 386.0
-margin_bottom = 165.0
-custom_fonts/font = ExtResource( 4 )
-text = "Craft"
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HSplitContainer"]
 margin_left = 364.0
 margin_right = 716.0
 margin_bottom = 389.0
 size_flags_horizontal = 3
+
+[node name="CraftingGrid" type="GridContainer" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_right = 352.0
+margin_bottom = 349.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 3
 
-[node name="ItemSlot" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
+[node name="1" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
 margin_right = 114.0
-margin_bottom = 192.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 113.0
 
-[node name="ItemSlot2" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
+[node name="2" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
 margin_left = 118.0
 margin_right = 232.0
-margin_bottom = 192.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 113.0
 
-[node name="ItemSlot3" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
+[node name="3" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
 margin_left = 236.0
 margin_right = 350.0
-margin_bottom = 192.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 113.0
 
-[node name="ItemSlot4" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
-margin_top = 196.0
+[node name="4" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
+margin_top = 117.0
 margin_right = 114.0
-margin_bottom = 388.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 230.0
 
-[node name="ItemSlot5" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
+[node name="5" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
 margin_left = 118.0
-margin_top = 196.0
+margin_top = 117.0
 margin_right = 232.0
-margin_bottom = 388.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 230.0
 
-[node name="ItemSlot6" parent="VBoxContainer/HSplitContainer/GridContainer" instance=ExtResource( 5 )]
+[node name="6" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
 margin_left = 236.0
-margin_top = 196.0
+margin_top = 117.0
 margin_right = 350.0
-margin_bottom = 388.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 230.0
+
+[node name="7" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
+margin_top = 234.0
+margin_right = 114.0
+margin_bottom = 347.0
+
+[node name="8" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
+margin_left = 118.0
+margin_top = 234.0
+margin_right = 232.0
+margin_bottom = 347.0
+
+[node name="9" parent="VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid" instance=ExtResource( 5 )]
+margin_left = 236.0
+margin_top = 234.0
+margin_right = 350.0
+margin_bottom = 347.0
+
+[node name="CraftButton" type="Button" parent="VBoxContainer/HSplitContainer/VBoxContainer"]
+margin_left = 118.0
+margin_top = 353.0
+margin_right = 233.0
+margin_bottom = 389.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Craft Item"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
-[connection signal="item_selected" from="VBoxContainer/HSplitContainer/RecipeList" to="." method="_on_RecipeList_item_selected"]
 [connection signal="pressed" from="VBoxContainer/HSplitContainer/VBoxContainer/CraftButton" to="." method="_on_CraftButton_pressed"]

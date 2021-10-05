@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://art/stone.png" type="Texture" id=1]
+[ext_resource path="res://art/stone_outcrop.png" type="Texture" id=1]
 [ext_resource path="res://scenes/objects/Object.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,7 +8,7 @@ extents = Vector2( 15.9314, 14.3802 )
 
 [node name="Stone" instance=ExtResource( 2 )]
 spawn_offset = Vector2( 0, 50 )
-item_name = "Rock"
+item_name = "Stone"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )

@@ -18,6 +18,15 @@ func remove_item():
 	item = null
 	$TextureRect.texture = null
 
+func is_empty():
+	return item == null
+	
+func item_name():
+	if item == null:
+		return null
+	else:
+		return item.name
+
 func _on_ItemSlot_gui_input(event):
 	if event is InputEventMouseButton:
 		mouse_down = not mouse_down
@@ -38,7 +47,10 @@ func _on_ItemSlot_gui_input(event):
 ]]
 margin_right = 40.0
 margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
+expand = true
 stretch_mode = 5
 script = SubResource( 1 )
 __meta__ = {

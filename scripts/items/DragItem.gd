@@ -1,7 +1,6 @@
 extends TextureRect
 
 var item: Item
-onready var mouse_offset = Vector2(25, 25)
 const world_item_prefab := preload("res://scenes/items/WorldItem.tscn")
 var snap_threshold = 100
 const scale = Vector2(3, 3)
@@ -9,17 +8,19 @@ const scale = Vector2(3, 3)
 func _process(delta: float) -> void:
 	texture = item.texture
 	
-	var mouse_pos = get_global_mouse_position() - mouse_offset
+	var mouse_pos = get_global_mouse_position() - rect_size / 2
 	rect_global_position = mouse_pos
 	rect_scale = scale
+	
+	# Move to front through code because it can't be done through ui
 	VisualServer.canvas_item_set_z_index(get_canvas_item(), 100)
 
 func on_released():
 	var slot = null
 	var self_middle = rect_global_position + (rect_size / 2)
 	for crnt_slot in get_tree().get_nodes_in_group('ItemSlots'):
-		# Skip slots that aren't empty or are hidden
-		if crnt_slot.item != null or not crnt_slot.is_visible_in_tree():
+		# Skip slots that are hidden or filled
+		if not (crnt_slot.is_visible_in_tree() and crnt_slot.is_empty()):
 			continue
 		var crnt_slot_bottom_right = crnt_slot.rect_global_position +crnt_slot.rect_size
 		if crnt_slot.rect_global_position.x < self_middle.x and \

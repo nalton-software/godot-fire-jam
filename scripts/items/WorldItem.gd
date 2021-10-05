@@ -11,6 +11,7 @@ func _enter_tree():
 		item_name = item.name
 	else:
 		printerr('Error: WorldItem has no item assigned')
+		free()
 	$Sprite.texture = item.texture
 	$Sprite.scale.x = item.size.x / item.texture.get_width()
 	$Sprite.scale.y = item.size.y / item.texture.get_height()

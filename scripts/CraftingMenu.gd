@@ -1,7 +1,6 @@
 extends Panel
 
-onready var recipeList = $VBoxContainer/HSplitContainer/RecipeList
-onready var recipePanel = $VBoxContainer/HSplitContainer/VBoxContainer
+onready var item_slots = $"VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid".get_children()
 var crnt_recipe
 
 func _ready():
@@ -20,23 +19,33 @@ func close():
 	hide()
 
 func populate_recipes():
-	for recipe_name in Recipes.data:
-		recipeList.add_item(recipe_name)
-	recipeList.select(0)
-	_on_RecipeList_item_selected(0)
-
-func _on_RecipeList_item_selected(index):
-	# Multiply index by 3 because of stupid godot
-	var recipe_name = recipeList.items[index * 3]
-	crnt_recipe = Recipes.data[recipe_name]
-	recipePanel.get_node('Heading').text = recipe_name
-	recipePanel.get_node('Ingredients').text = 'Required resources:'
+	return
+	#for recipe_name in Recipes.data:
+	#	recipeList.add_item(recipe_name)
+	#recipeList.select(0)
+	#_on_RecipeList_item_selected(0)
 
 func _on_CraftButton_pressed():
-	if crnt_recipe.can_be_made(Inventory.items):
-		for ingredient_name in crnt_recipe.ingredients:
-			for i in range(crnt_recipe.ingredients[ingredient_name]):
+	var item_names = []
+	for node in item_slots:
+		item_names.append(node.item_name())
+	
+	var nested_item_names = Utils.chunk_list(item_names, 3)
+	
+	# Check all of the recipes to see which one can be built
+	for crnt_recipe_name in Recipes.data:
+		var crnt_recipe = Recipes.data[crnt_recipe_name]
+		if crnt_recipe.can_be_made(nested_item_names):
+			# Use the non-nested array we have instead of de-nesting the recipe's data
+			for ingredient_idx in range(len(item_names)):
+				var ingredient_name = item_names[ingredient_idx]
+				item_slots[ingredient_idx].remove_item()
+				if ingredient_name == null:
+					continue
 				Inventory.remove_item(Items.data[ingredient_name])
-		for output_name in crnt_recipe.outputs:
-			for i in range(crnt_recipe.outputs[output_name]):
-				Inventory.add_item(Items.data[output_name])
+			
+			# Add crafted item to center of crafting square
+			item_slots[4].set_item(Items.data[crnt_recipe.output])
+			
+			# Only build one recipe
+			break
