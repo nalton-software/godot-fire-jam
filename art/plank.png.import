@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planks.png-9a4ed0d87729d39c88013f56d93cb928.stex"
+path="res://.import/plank.png-796c810389ce5aaa690189f5a0d07c10.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/planks.png"
-dest_files=[ "res://.import/planks.png-9a4ed0d87729d39c88013f56d93cb928.stex" ]
+source_file="res://art/plank.png"
+dest_files=[ "res://.import/plank.png-796c810389ce5aaa690189f5a0d07c10.stex" ]
 
 [params]
 

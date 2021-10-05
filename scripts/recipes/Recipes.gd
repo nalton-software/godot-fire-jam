@@ -17,5 +17,20 @@ var data = {
 		['Wood', null, 'Wood'],
 		['Wood', 'Wood', 'Wood'],
 		['Stone', null, 'Stone']
-	], 'Cart')
+	], 'Cart'),
+	'Axe' : Recipe.new('Axe', [
+		[null, 'Plank', 'Stone'],
+		[null, 'Plank', 'Stone'],
+		[null, 'Plank', null],
+	], 'Axe'),
+	'Pickaxe' : Recipe.new('Pickaxe', [
+		[null, 'Stone', 'Stone'],
+		[null, 'Stone', 'Stone'],
+		[null, 'Stone', null],
+	], 'Pickaxe'),
+	'Plank' : Recipe.new('Plank', [
+		[null, null, null],
+		['Wood', 'Wood', 'Wood'],
+		[null, null, null],
+	], 'Plank')
 }
