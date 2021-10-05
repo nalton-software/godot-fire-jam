@@ -7,15 +7,20 @@ func _init():
 	for i in range(max_items):
 		items.append(null)
 
-func add_item(item: Resource) -> bool:
+func set_item_at_index(item: Resource, index: int, already_in_hud: bool = false):
+	items[index] = item
+	var hud = get_hud()
+	if hud != null and not already_in_hud:
+		hud.force_inventory_sync()
+
+func add_item(item: Resource, already_in_hud: bool = false) -> bool:
 	var empty_index = items.find(null)
 	if empty_index != -1:
 		items[empty_index] = item
 		var hud = get_hud()
-		if hud != null:
-			hud.add_item(item, empty_index)
+		if hud != null and not already_in_hud:
+			hud.force_inventory_sync()
 		return true
-		
 	return false
 	
 func remove_item(index_or_item):

@@ -1,46 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://art/hotbar_tile.png" type="Texture" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends TextureRect
-
-export (bool) var in_inventory = false
-var item: Item = null
-var mouse_down := false
-var drag_item_prefab := preload('res://scenes/items/DragItem.tscn')
-
-func set_item(p_item: Item):
-	item = p_item
-	$TextureRect.texture = item.texture
-
-func remove_item():
-	item = null
-	$TextureRect.texture = null
-
-func is_empty():
-	return item == null
-	
-func item_name():
-	if item == null:
-		return null
-	else:
-		return item.name
-
-func _on_ItemSlot_gui_input(event):
-	if event is InputEventMouseButton:
-		mouse_down = not mouse_down
-		if item != null:
-			var drag_item = drag_item_prefab.instance()
-			drag_item.item = item
-			get_tree().get_nodes_in_group('DragItemHolder')[0].add_child(drag_item)
-			
-			# Don't touch this or the inventory or it will break
-			if in_inventory:
-				Inventory.remove_item(get_index())
-			else:
-				remove_item()
-"
+[ext_resource path="res://scripts/items/ItemSlot.gd" type="Script" id=2]
 
 [node name="ItemSlot" type="TextureRect" groups=[
 "ItemSlots",
@@ -52,7 +13,7 @@ size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
-script = SubResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

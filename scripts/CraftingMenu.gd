@@ -42,7 +42,6 @@ func _on_CraftButton_pressed():
 				item_slots[ingredient_idx].remove_item()
 				if ingredient_name == null:
 					continue
-				Inventory.remove_item(Items.data[ingredient_name])
 			
 			# Add crafted item to center of crafting square
 			item_slots[4].set_item(Items.data[crnt_recipe.output])

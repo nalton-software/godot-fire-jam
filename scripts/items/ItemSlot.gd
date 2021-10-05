@@ -5,8 +5,10 @@ var item: Item = null
 var mouse_down := false
 var drag_item_prefab := preload('res://scenes/items/DragItem.tscn')
 
-func set_item(p_item: Item):
+func set_item(p_item: Item, already_in_inventory: bool = false):
 	item = p_item
+	if in_inventory and not already_in_inventory:
+		Inventory.set_item_at_index(item, get_index(), true)
 	$TextureRect.texture = item.texture
 
 func remove_item():

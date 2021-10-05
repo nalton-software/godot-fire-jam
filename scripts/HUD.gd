@@ -3,6 +3,12 @@ extends CanvasLayer
 onready var inventory = $"InventoryItems"
 onready var item_slots = inventory.get_children()
 
+func force_inventory_sync():
+	for item_idx in len(Inventory.items):
+		var crnt_item = Inventory.items[item_idx]
+		if crnt_item != null:
+			item_slots[item_idx].set_item(crnt_item, true)
+
 func add_item(item: Item, index: int = -1):
 	if index == -1:
 		for item_slot in item_slots:
@@ -12,7 +18,6 @@ func add_item(item: Item, index: int = -1):
 		item_slots[index].set_item(item)
 
 func remove_item(index: int):
-	var spots = inventory.get_children()
 	item_slots[index].remove_item()
 
 func _on_CraftingMenuButton_pressed():
