@@ -38,6 +38,10 @@ Items="*res://scripts/items/Items.gd"
 LevelMangement="*res://scripts/LevelMangement.gd"
 Inventory="*res://scripts/Inventory.gd"
 
+[display]
+
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={

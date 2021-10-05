@@ -16,8 +16,16 @@ func _process(delta: float) -> void:
 
 func on_released():
 	var slot = null
+	var self_middle = rect_global_position + (rect_size / 2)
 	for crnt_slot in get_tree().get_nodes_in_group('ItemSlots'):
-		if crnt_slot.rect_global_position.distance_to(rect_global_position) < snap_threshold:
+		# Skip slots that aren't empty or are hidden
+		if crnt_slot.item != null or not crnt_slot.is_visible_in_tree():
+			continue
+		var crnt_slot_bottom_right = crnt_slot.rect_global_position +crnt_slot.rect_size
+		if crnt_slot.rect_global_position.x < self_middle.x and \
+			crnt_slot.rect_global_position.y < self_middle.y and \
+			self_middle.x < crnt_slot_bottom_right.x and \
+			self_middle.y < crnt_slot_bottom_right.y:
 			slot = crnt_slot
 			break
 		
