@@ -16,11 +16,14 @@ func _init(p_name, p_ingredients, p_output):
 	ingredients = p_ingredients
 	output = p_output
 
-	for item_name in ingredients:
-		if item_name in ingredient_quantities:
-			ingredient_quantities[item_name] += 1
-		else:
-			ingredient_quantities[item_name] = 1
+	for row in ingredients:
+		for item_name in row:
+			if item_name == null:
+				continue
+			if item_name in ingredient_quantities:
+				ingredient_quantities[item_name] += 1
+			else:
+				ingredient_quantities[item_name] = 1
 
 func can_be_made(item_arrangement):
 	# Item arrangment is list of item names

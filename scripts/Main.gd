@@ -22,6 +22,7 @@ func _ready():
 	$HUD.set_target_item(Items.data[target_item_name])
 
 func _process(delta: float):
+	$YSort/Player.frozen = $HUD/CraftingMenu.is_visible_in_tree()
 	for item in Inventory.items:
 		if item == null:
 			continue

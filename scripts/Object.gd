@@ -12,12 +12,15 @@ var item: Resource
 var mouse_on := false
 var mouse_down := false
 var mining_progress := 0.0
+var max_mining_dist = 200
 
 func _ready():
 	item = Items.data[item_name]
 
 func _process(delta: float) -> void:
-	if Input.is_mouse_button_pressed(BUTTON_LEFT) and mouse_on:
+	var player = get_tree().get_nodes_in_group('Players')[0]
+	var player_is_close = global_position.distance_to(player.global_position) < max_mining_dist
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and mouse_on and player_is_close:
 		mining_progress += delta
 		if mining_progress > toughness:
 			destroy()

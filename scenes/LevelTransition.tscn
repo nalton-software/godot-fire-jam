@@ -41,3 +41,12 @@ margin_bottom = -39.5591
 custom_fonts/font = ExtResource( 3 )
 text = "Click anywhere to continue"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TypewriterTimer" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[connection signal="timeout" from="TypewriterTimer" to="." method="_on_TypewriterTimer_timeout"]

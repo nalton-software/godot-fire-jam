@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-
 export var max_speed := 350
 export var acceleration := 1500
 export var friction := 2000
 export var shift_multiplier := 1.5
 var direction = 'right'
+var frozen = false
 
 var velocity = Vector2.ZERO
 
@@ -13,6 +13,8 @@ func _ready():
 	$AnimatedSprite.playing = true
 
 func _physics_process(delta):
+	if frozen:
+		return
 	var move_direction := Vector2.ZERO
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))

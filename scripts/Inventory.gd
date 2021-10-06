@@ -4,8 +4,7 @@ var items = []
 export (int) var max_items = 9
 
 func _init():
-	for i in range(max_items):
-		items.append(null)
+	clear_items()
 
 func set_item_at_index(item: Resource, index: int, already_in_hud: bool = false):
 	items[index] = item
@@ -23,6 +22,11 @@ func add_item(item: Resource, already_in_hud: bool = false) -> bool:
 		return true
 	return false
 	
+func clear_items():
+	items = []
+	for i in range(max_items):
+		items.append(null)
+
 func remove_item(index_or_item):
 	var index = index_or_item if typeof(index_or_item) == TYPE_INT else items.find(index_or_item)
 	items[index] = null

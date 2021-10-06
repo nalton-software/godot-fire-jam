@@ -3,11 +3,6 @@ extends Node
 const Recipe = preload('res://scripts/recipes/Recipe.gd')
 
 var data = {
-	'String' : Recipe.new('String', [
-		[null, null, null],
-		['Cotton Fluff', 'Cotton Fluff', 'Cotton Fluff'],
-		[null, null, null]
-	], 'String'),
 	'Cart' : Recipe.new('Cart', [
 		['Plank', 'Plank', 'Plank'],
 		['Plank', 'Plank', 'Plank'],
@@ -23,6 +18,12 @@ var data = {
 		[null, 'Stone', 'Stone'],
 		[null, 'Stone', null],
 	], 'Pickaxe'),
+	
+	'String' : Recipe.new('String', [
+		[null, null, null],
+		['Cotton Fluff', 'Cotton Fluff', 'Cotton Fluff'],
+		[null, null, null]
+	], 'String'),
 	'Plank' : Recipe.new('Plank', [
 		[null, null, null],
 		['Wood', 'Wood', 'Wood'],

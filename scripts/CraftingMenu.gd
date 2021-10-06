@@ -1,10 +1,11 @@
 extends Panel
 
+const RecipeHint = preload('res://scenes/RecipeHint.tscn')
 onready var item_slots = $"VBoxContainer/HSplitContainer/VBoxContainer/CraftingGrid".get_children()
 var crnt_recipe
 
 func _ready():
-	populate_recipes()
+	populate_recipe_hints()
 	hide()
 
 func _on_CloseButton_pressed():
@@ -18,12 +19,11 @@ func close():
 				item_slot.remove_item()
 	hide()
 
-func populate_recipes():
-	return
-	#for recipe_name in Recipes.data:
-	#	recipeList.add_item(recipe_name)
-	#recipeList.select(0)
-	#_on_RecipeList_item_selected(0)
+func populate_recipe_hints():
+	for recipe_name in Recipes.data:
+		var recipe_hint = RecipeHint.instance()
+		recipe_hint.recipe = Recipes.data[recipe_name]
+		$VBoxContainer/HSplitContainer/RecipeHints/VBoxContainer.add_child(recipe_hint)
 
 func _on_CraftButton_pressed():
 	var item_names = []
