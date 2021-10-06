@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Fire Jam"
-run/main_scene="res://scenes/levels/02.tscn"
+run/main_scene="res://scenes/StartScene.tscn"
 config/icon="res://art/icon.svg"
 
 [autoload]

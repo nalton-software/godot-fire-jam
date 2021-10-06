@@ -24,6 +24,11 @@ var data = {
 		['Cotton Fluff', 'Cotton Fluff', 'Cotton Fluff'],
 		[null, null, null]
 	], 'String'),
+	'Cloth' : Recipe.new('Cloth', [
+		['String', null, 'String'],
+		[null, 'String', null],
+		['String', null, 'String']
+	], 'Cloth'),
 	'Plank' : Recipe.new('Plank', [
 		[null, null, null],
 		['Wood', 'Wood', 'Wood'],

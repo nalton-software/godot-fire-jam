@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
@@ -6,20 +6,19 @@
 [ext_resource path="res://scenes/objects/StoneOutcrop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/tilemaps/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/objects/CottonPlant.tscn" type="PackedScene" id=9]
 
 [node name="03" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
-target_item_name = "Wood"
+target_item_name = "Axe"
 finished_level_text = "The axe is very popular
 
 Unfortunately people used it to cut down all the trees
 and the forest became a desert
 
 You will have to find alternatives to wood"
-should_spawn_testing_objects = false
-objects_to_spawn = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ) ]
+left_boundary = 1000
+top_boundary = 1000
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
