@@ -18,8 +18,6 @@ Unfortunately, it's so popular that people used it to
 take all of the stones and planks from the forest
 
 Now you will have to find other material sources"
-left_boundary = 1000
-top_boundary = 1000
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 

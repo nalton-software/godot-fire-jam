@@ -2,7 +2,7 @@ extends Node
 
 const level_path_format = 'res://scenes/levels/%s.tscn'
 const level_transition_scene_prefab = preload('res://scenes/LevelTransition.tscn')
-var crnt_level_num := 5
+var crnt_level_num := 2
 
 func load_level(level_num: int):
 	var level_name = str(level_num).pad_zeros(2)

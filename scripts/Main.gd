@@ -22,7 +22,6 @@ func _ready():
 
 func _draw():
 	if Engine.editor_hint:
-		print('yoi')
 		var rect_size = Vector2(right_boundary, bottom_boundary) - \
 			Vector2(left_boundary, top_boundary)
 		var rect_position = Vector2(left_boundary, top_boundary)
@@ -45,11 +44,12 @@ func create_boundary():
 	var collider = CollisionPolygon2D.new()
 	collider.visible = false
 	collider.build_mode = collider.BUILD_SEGMENTS
-	collider.polygon = [
+	collider.polygon = PoolVector2Array([
 		Vector2(left_boundary, top_boundary),
-		Vector2(top_boundary, right_boundary),
+		Vector2(right_boundary, top_boundary),
 		Vector2(right_boundary, bottom_boundary),
-		Vector2(bottom_boundary, left_boundary),
+		Vector2(left_boundary, bottom_boundary),
 		Vector2(left_boundary, top_boundary)
-	]
+	])
+	
 	body.add_child(collider)
