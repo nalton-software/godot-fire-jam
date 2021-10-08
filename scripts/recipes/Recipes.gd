@@ -4,6 +4,11 @@ const Recipe = preload('res://scripts/recipes/Recipe.gd')
 
 var data = {
 	# Level-target recipes
+	'Arrow' : Recipe.new('Arrow', [
+		[null, null, 'Stone'],
+		[null, 'Plank', null],
+		['Plank', null, null]
+	], 'Arrow'),
 	'Cart' : Recipe.new('Cart', [
 		['Plank', 'Plank', 'Plank'],
 		['Plank', 'Plank', 'Plank'],

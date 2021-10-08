@@ -33,7 +33,14 @@ func remove_item(index_or_item):
 	var hud = get_hud()
 	if hud != null:
 		hud.remove_item(index)
-		
+
+func get_item_count():
+	var item_count = 0
+	for item in items:
+		if item != null:
+			item_count += 1
+	return item_count
+
 func get_hud():
 	var nodes = get_tree().get_nodes_in_group('HUDs')
 	if len(nodes) == 0:
