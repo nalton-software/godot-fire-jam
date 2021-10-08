@@ -8,6 +8,13 @@ export (int) var left_boundary = -1000
 export (int) var top_boundary = -1000
 export (int) var right_boundary = 1000
 export (int) var bottom_boundary = 1000
+var already_finished = false
+
+# Freeplay objects
+export (bool) var is_freeplay = false
+export (int) var num_freeplay_objects = 300
+export (Vector2) var max_freeplay_object_distance = Vector2(2500, 1250)
+export (Array, PackedScene) var freeplay_objects_to_spawn = []
 
 func _ready():
 	create_boundary()
@@ -16,9 +23,14 @@ func _ready():
 		return
 	if target_item_name == '':
 		printerr('Didn\'t specify target item name of scene %s' % name)
-		return
+	
+	if is_freeplay:
+		spawn_freeplay_objects()
 		
-	$HUD.set_target_item(Items.data[target_item_name])
+	if target_item_name == '':
+		$HUD.set_target_item(null)
+	else:
+		$HUD.set_target_item(Items.data[target_item_name])
 
 func _draw():
 	if Engine.editor_hint:
@@ -35,7 +47,8 @@ func _process(delta: float):
 	for item in Inventory.items:
 		if item == null:
 			continue
-		if item.name == target_item_name:
+		if item.name == target_item_name and not already_finished:
+			already_finished = true
 			LevelManagement.transition_to_next_level()
 
 func create_boundary():
@@ -53,3 +66,12 @@ func create_boundary():
 	])
 	
 	body.add_child(collider)
+
+func spawn_freeplay_objects():
+	for i in range(num_freeplay_objects):
+		var obj = freeplay_objects_to_spawn[randi() % len(freeplay_objects_to_spawn)].instance()
+		obj.position = Vector2(
+			rand_range(-max_freeplay_object_distance.x, max_freeplay_object_distance.x),
+			rand_range(-max_freeplay_object_distance.y, max_freeplay_object_distance.y)
+		)
+		$YSort.add_child(obj)

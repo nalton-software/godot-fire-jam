@@ -6,7 +6,6 @@ var min_image_size = Vector2(32, 32)
 
 func _ready():
 	var is_first_item = true
-	print('Recipe: %s' % recipe.name)
 	for item_name in recipe.ingredient_quantities:
 		var label_text = '%s x ' % recipe.ingredient_quantities[item_name]
 		if not is_first_item:

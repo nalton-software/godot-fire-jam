@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/TutorialLevel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/items/WorldItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/Tree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/smaller_font_with_border.tres" type="DynamicFont" id=6]
 [ext_resource path="res://scenes/tilemaps/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 
@@ -13,7 +14,10 @@ script = ExtResource( 1 )
 target_item_name = "Arrow"
 finished_level_text = "Good job finishing the level
 
-It will only get harder from here"
+It will only get harder from here
+
+Hey playtesters, can you suggest something to write here? 
+The current text is not very good"
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -192,18 +196,35 @@ item_name = "Plank"
 position = Vector2( 130.167, -21.4299 )
 item_name = "Stone"
 
-[node name="Hints" type="CanvasLayer" parent="."]
+[node name="Prompts" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="Hints"]
+[node name="Label" type="Label" parent="Prompts"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -512.0
-margin_top = 470.226
+margin_top = 462.226
 margin_right = 512.0
-margin_bottom = 509.226
+margin_bottom = 501.226
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
 text = "SUSU is good"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickToContinue" type="Label" parent="Prompts"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -102.61
+margin_top = -96.7739
+margin_right = 102.39
+margin_bottom = -66.7739
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 6 )
+text = "Click for next prompt"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

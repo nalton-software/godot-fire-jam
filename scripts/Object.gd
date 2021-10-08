@@ -18,7 +18,10 @@ func _ready():
 	item = Items.data[item_name]
 
 func _process(delta: float) -> void:
-	var player = get_tree().get_nodes_in_group('Players')[0]
+	var players = get_tree().get_nodes_in_group('Players')
+	if len(players) == 0:
+		return
+	var player = players[0]
 	var player_is_close = global_position.distance_to(player.global_position) < max_mining_dist
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and mouse_on and player_is_close:
 		mining_progress += delta

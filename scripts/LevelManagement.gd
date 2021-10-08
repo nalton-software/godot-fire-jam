@@ -2,9 +2,14 @@ extends Node
 
 const level_path_format = 'res://scenes/levels/%s.tscn'
 const level_transition_scene_prefab = preload('res://scenes/LevelTransition.tscn')
-var crnt_level_num := 1
+var crnt_level_num := 5
+const num_levels = 5
 
 func load_level(level_num: int):
+	if crnt_level_num > num_levels:
+		get_tree().change_scene('res://scenes/Freeplay.tscn')
+		return
+	
 	var level_name = str(level_num).pad_zeros(2)
 	Inventory.clear_items()
 	get_tree().change_scene(level_path_format % level_name)

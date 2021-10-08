@@ -135,8 +135,8 @@ align = 2
 
 [node name="Image" type="TextureRect" parent="TargetItem"]
 margin_left = 165.0
-margin_right = 264.0
-margin_bottom = 84.0
+margin_right = 263.0
+margin_bottom = 83.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 texture = ExtResource( 5 )
@@ -144,6 +144,5 @@ expand = true
 stretch_mode = 5
 
 [node name="CraftingMenu" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [connection signal="pressed" from="CraftingMenuButton" to="." method="_on_CraftingMenuButton_pressed"]
