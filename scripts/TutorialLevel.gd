@@ -18,7 +18,8 @@ var prompts := {
 	'crafting_menu' : Prompt.new('Now click the "Crafting" button', false),
 	'crafting_hints' : Prompt.new('On the left are hints to help you craft'),
 	'crafting_hints_2' : Prompt.new('These will be very useful in later levels when the recipes are complex'),
-	'crafting_square' : Prompt.new('Craft the target item by arranging items in the grid on the right', false),
+	'crafting_square' : Prompt.new('On the right is a crafting grid'),
+	'crafting_square_2' : Prompt.new('Arrange items in the shape of the target object to craft it', false),
 	'finished_crafting' : Prompt.new('To finish, place the crafted item back in your inventory', false)
 }
 var crnt_prompt_name = null
@@ -41,7 +42,7 @@ func display_prompt():
 	elif get_prompt_index(crnt_prompt_name) <= get_prompt_index('crafting_menu'):
 		if $HUD/CraftingMenu.is_visible_in_tree():
 			crnt_prompt_name = 'crafting_hints'
-	elif get_prompt_index(crnt_prompt_name) <= get_prompt_index('crafting_square'):
+	elif get_prompt_index(crnt_prompt_name) <= get_prompt_index('crafting_square_2'):
 		var has_target_item = false
 		for item_slot in $HUD/CraftingMenu.item_slots:
 			if item_slot.item == null:

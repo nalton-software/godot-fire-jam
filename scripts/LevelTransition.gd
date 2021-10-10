@@ -11,7 +11,7 @@ func show_text(p_text: String):
 	$TypewriterTimer.wait_time = character_display_interval
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and visible_characters == len(text):
 		LevelManagement.load_level(LevelManagement.crnt_level_num)
 
 
@@ -27,3 +27,6 @@ func _on_TypewriterTimer_timeout():
 			$TypewriterTimer.wait_time = character_display_interval * 4
 		else:
 			$TypewriterTimer.wait_time = character_display_interval
+	else:
+		$TypewriterTimer.stop()
+		$Prompt.show()

@@ -8,16 +8,16 @@
 
 [node name="05" type="Node2D"]
 script = ExtResource( 1 )
-target_item_name = "Cotton Fluff"
+target_item_name = "Hat"
 finished_level_text = "The hat is very popular
 
 It shields the wearer from the sun
 and encourages people to live in the desert
 
 Unfortunately, the industries the people build
-produce so much smoke that the desert freezes
+produce so much soot and smoke that the desert freezes
 
-You will now have to build things from ice and snow"
+You will now have to build things in the freezing cold"
 left_boundary = -2000
 top_boundary = -1500
 right_boundary = 2500

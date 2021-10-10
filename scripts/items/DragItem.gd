@@ -22,7 +22,7 @@ func on_released():
 		# Skip slots that are hidden or filled
 		if not (crnt_slot.is_visible_in_tree() and crnt_slot.is_empty()):
 			continue
-		var crnt_slot_bottom_right = crnt_slot.rect_global_position +crnt_slot.rect_size
+		var crnt_slot_bottom_right = crnt_slot.rect_global_position + crnt_slot.rect_size
 		if crnt_slot.rect_global_position.x < self_middle.x and \
 			crnt_slot.rect_global_position.y < self_middle.y and \
 			self_middle.x < crnt_slot_bottom_right.x and \
@@ -32,9 +32,9 @@ func on_released():
 		
 	if slot != null:
 		slot.set_item(item)
+		slot.item_just_dragged = true
 		queue_free()
 	else:
-		pass
 		var world_item = world_item_prefab.instance()
 		world_item.item = item
 		var object_container = get_tree().current_scene.get_node('YSort')

@@ -4,6 +4,10 @@ export (bool) var in_inventory = false
 var item: Item = null
 var mouse_down := false
 var drag_item_prefab := preload('res://scenes/items/DragItem.tscn')
+var item_just_dragged = false
+
+func _process(delta):
+	item_just_dragged = false
 
 func set_item(p_item: Item, already_in_inventory: bool = false):
 	item = p_item
@@ -25,7 +29,7 @@ func item_name():
 		return item.name
 
 func _on_ItemSlot_gui_input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not item_just_dragged:
 		mouse_down = not mouse_down
 		if item != null:
 			var drag_item = drag_item_prefab.instance()
