@@ -45,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -48.5
-margin_top = -32.5
-margin_right = 48.5
-margin_bottom = 32.5
+margin_left = -57.7832
+margin_top = -30.4253
+margin_right = 39.2168
+margin_bottom = 34.5747
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
@@ -59,12 +59,29 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -102.431
-margin_bottom = -21.4314
+margin_left = 1.85666
+margin_top = -195.967
+margin_right = 1.85669
+margin_bottom = -114.967
 custom_fonts/font = ExtResource( 2 )
 text = "Made by ThatCoolCoder and Calbabreaker for the
 Godot Fire Charity Jam #1"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Website" type="LinkButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -216.756
+margin_top = -81.3511
+margin_right = 167.244
+margin_bottom = -0.351135
+custom_fonts/font = ExtResource( 2 )
+text = "https://naltonsoftware.com"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,3 +182,4 @@ position = Vector2( 191.987, 150 )
 position = Vector2( 78.5938, 405.764 )
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Website" to="." method="_on_Website_pressed"]
