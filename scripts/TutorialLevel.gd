@@ -10,7 +10,7 @@ class Prompt:
 
 onready var prompt_area = $"Prompts"
 var prompts := {
-	'welcome' : Prompt.new('Welcome to <game name here>'),
+	'welcome' : Prompt.new('Welcome to ChangeCraft'),
 	'goal' : Prompt.new('Your goal is to craft the item shown in the top right'),
 	'pickup_items' : Prompt.new('Pick up items on the ground by walking over them', false),
 	'inventory_help' : Prompt.new('Drag items in your inventory to move them'),
@@ -55,11 +55,11 @@ func display_prompt():
 			
 	if prompts[crnt_prompt_name].can_skip and \
 		get_prompt_index(crnt_prompt_name) < len(prompts.keys()) - 1:
-		prompt_area.get_node("ClickToContinue").text = 'Click for next prompt'
+		prompt_area.get_node("ClickToContinue").text = '[ Press space for next prompt ]'
 		if Input.is_action_just_pressed("next_prompt"):
 			crnt_prompt_name = prompts.keys()[get_prompt_index(crnt_prompt_name) + 1]
 	else:
-		prompt_area.get_node("ClickToContinue").text = 'Follow the prompt\'s instructions to continue'
+		prompt_area.get_node("ClickToContinue").text = '[ Follow the prompt\'s instructions to continue ]'
 		
 	prompt_area.get_node("Label").text = prompts[crnt_prompt_name].text
 	

@@ -28,4 +28,4 @@ func set_target_item(item: Item):
 		$TargetItem/Image.texture = item.texture
 
 func _on_CraftingMenuButton_pressed():
-	$CraftingMenu.show()
+	$CraftingMenu.toggle_showing()

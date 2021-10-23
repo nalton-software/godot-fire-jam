@@ -11,6 +11,12 @@ func _ready():
 func _on_CloseButton_pressed():
 	close()
 
+func toggle_showing():
+	if is_visible_in_tree():
+		hide()
+	else:
+		show()
+
 func close():
 	for item_slot in get_tree().get_nodes_in_group('ItemSlots'):
 		if is_a_parent_of(item_slot):

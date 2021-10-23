@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/TutorialLevel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/items/WorldItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/Tree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://resources/smaller_font_with_border.tres" type="DynamicFont" id=6]
 [ext_resource path="res://scenes/tilemaps/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 
@@ -14,10 +13,7 @@ script = ExtResource( 1 )
 target_item_name = "Arrow"
 finished_level_text = "Good job finishing the level
 
-It will only get harder from here
-
-Hey playtesters, can you suggest something to write here? 
-The current text is not very good"
+It will only get harder from here"
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -185,15 +181,15 @@ position = Vector2( 1571.85, -844.723 )
 position = Vector2( 1571.85, -844.723 )
 
 [node name="Plank" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 54.7654, -76.9889 )
+position = Vector2( 86.542, -164.734 )
 item_name = "Plank"
 
 [node name="Plank2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -82.5448, -76.1952 )
+position = Vector2( -150.793, -164.734 )
 item_name = "Plank"
 
 [node name="Plank3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 130.167, -21.4299 )
+position = Vector2( 276.698, -82.3042 )
 item_name = "Stone"
 
 [node name="Prompts" type="CanvasLayer" parent="."]
@@ -223,7 +219,7 @@ margin_top = -96.7739
 margin_right = 102.39
 margin_bottom = -66.7739
 grow_horizontal = 2
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
 text = "Click for next prompt"
 align = 1
 __meta__ = {
